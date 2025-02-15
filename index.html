@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umrah Package Calculator - Al-Asad International Travels Swat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png"> <!-- Logo in the browser tab -->
+</head>
+<body>
+  <!-- Blue Gradient Header with Logo and Agency Name -->
+  <div class="header">
+    <div class="logo-container">
+      <img src="logo.png" alt="Al-Asad International Travels Logo" class="logo">
+      <p class="agency-name">Al-Asad International Travels Swat</p>
+    </div>
+    <button id="logout-button" class="logout-button hidden">Logout</button>
+  </div>
+
+  <!-- Login Section -->
+  <div id="login-section" class="login-section">
+    <h2>Umrah Package Calculator</h2>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="main-content hidden">
+    <!-- White Container for Calculator -->
+    <div class="container">
+      <h2>Umrah Package Calculator</h2>
+      <div class="calculator">
+        <!-- Umrah Services Checklist -->
+        <div class="umrah-services">
+          <h3>Umrah Services</h3>
+          <label><input type="checkbox" id="accommodation-checkbox"> Accommodation</label>
+          <label><input type="checkbox" id="flight-checkbox"> Flight (PKR): <input type="number" id="flight-cost" value="50000" min="0"></label>
+          <label><input type="checkbox" id="visa-checkbox"> Visa (SAR): <input type="number" id="visa-cost" value="2000" min="0"></label>
+        </div>
+
+        <!-- Nights and Accommodation Inputs -->
+        <div id="accommodation-details" class="hidden">
+          <div class="accommodation-inputs">
+            <!-- Makkah Section -->
+            <div class="makkah-section card">
+              <label for="makkah-nights">Nights in Makkah:</label>
+              <input type="number" id="makkah-nights" placeholder="0" min="0">
+              <div class="checklist">
+                <h3>Makkah Accommodation</h3>
+                <label><input type="radio" name="makkah-accommodation" value="sharing" checked> Sharing: <input type="number" id="makkah-sharing-rate" value="1000" min="0"> (SAR/night)</label>
+                <label><input type="radio" name="makkah-accommodation" value="double"> Double: <input type="number" id="makkah-double-rate" value="700" min="0"> (SAR/night)</label>
+                <label><input type="radio" name="makkah-accommodation" value="triple"> Triple: <input type="number" id="makkah-triple-rate" value="500" min="0"> (SAR/night)</label>
+                <label><input type="radio" name="makkah-accommodation" value="quad"> Quad: <input type="number" id="makkah-quad-rate" value="400" min="0"> (SAR/night)</label>
+              </div>
+            </div>
+
+            <!-- Medina Section -->
+            <div class="medina-section card">
+              <label for="medina-nights">Nights in Medina:</label>
+              <input type="number" id="medina-nights" placeholder="0" min="0">
+              <div class="checklist">
+                <h3>Medina Accommodation</h3>
+                <label><input type="radio" name="medina-accommodation" value="sharing" checked> Sharing: <input type="number" id="medina-sharing-rate" value="1000" min="0"> (SAR/night)</label>
+                <label><input type="radio" name="medina-accommodation" value="double"> Double: <input type="number" id="medina-double-rate" value="700" min="0"> (SAR/night)</label>
+                <label><input type="radio" name="medina-accommodation" value="triple"> Triple: <input type="number" id="medina-triple-rate" value="500" min="0"> (SAR/night)</label>
+                <label><input type="radio" name="medina-accommodation" value="quad"> Quad: <input type="number" id="medina-quad-rate" value="400" min="0"> (SAR/night)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="calculateCost()">Calculate Total Cost</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p class="powered-by">Office No. 1-2, First Floor Malak Nawsherawan Tower, Near Sohrab Khan Chowk Mingora Swat. Contact: +92-946-700588</p>
+  </div>
+
+  <!-- Dialog Box for Results -->
+  <div id="result-dialog" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog()">&times;</span>
+      <h2>Calculation Results</h2>
+      <div id="result-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
